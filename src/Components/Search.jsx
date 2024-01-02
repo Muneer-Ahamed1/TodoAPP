@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { add,edit } from "../Features/createSlice/Todo";
 import { useEffect, useState } from "react";
 
@@ -11,7 +11,7 @@ const temp={
 const [state,setState]=useState(temp);
 useEffect(()=>{
     
-    if(update!=null) {
+    if(update !== null) {
         console.log(update)
         const vl={...state}
         vl['id']=update.id;
@@ -20,7 +20,7 @@ useEffect(()=>{
     }
     
 
-},[update])
+},[update,state])
 function addTask() {
     if(update!=null) {
         console.log(state)
@@ -40,7 +40,7 @@ function addTask() {
             <input type="text" placeholder="Enter Your Todo" className="px-4 py-2 border-white text-center rounded-lg w-2/4"
             style={{fontWeight:"400"}}
             onChange={(e)=>{
-                if(state!=undefined) {
+                if(state!==undefined) {
                  const dump={...state}
                 dump.task=e.target.value
                 setState(dump)

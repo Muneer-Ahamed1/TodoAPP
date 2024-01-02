@@ -1,7 +1,7 @@
 import "../index.css"
 import { useDispatch, useSelector } from "react-redux";
 import Search from "./Search"
-import { add, remove } from "../Features/createSlice/Todo";
+import {  remove } from "../Features/createSlice/Todo";
 import { useState } from "react";
 
 export default function Todo() {
